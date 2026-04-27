@@ -1,0 +1,583 @@
+.birthday-page {
+  position: relative;
+  min-height: 100vh;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  background:
+    radial-gradient(
+      circle at top left,
+      rgba(255, 255, 255, 0.9),
+      transparent 26%
+    ),
+    radial-gradient(
+      circle at top right,
+      rgba(255, 215, 0, 0.18),
+      transparent 18%
+    ),
+    linear-gradient(135deg, #ffb3d2 0%, #fce3a1 45%, #8ed0ff 100%);
+  color: #1f2937;
+  padding: 24px 16px 32px;
+}
+
+.birthday-page::before,
+.birthday-page::after {
+  content: "";
+  position: absolute;
+  left: 0;
+  right: 0;
+  height: 220px;
+  pointer-events: none;
+  background-image: radial-gradient(
+    circle,
+    rgba(255, 255, 255, 0.45) 15%,
+    transparent 16%
+  );
+}
+
+.birthday-page::before {
+  top: 0;
+  opacity: 0.55;
+}
+
+.birthday-page::after {
+  bottom: 0;
+  opacity: 0.35;
+}
+
+.party-overlay {
+  position: absolute;
+  inset: 0;
+  pointer-events: none;
+  overflow: hidden;
+  z-index: 0;
+}
+
+.party-popper {
+  position: absolute;
+  left: 10%;
+  bottom: 18%;
+  width: 100px;
+  height: 64px;
+  transform: rotate(-30deg);
+}
+
+.popper-shell,
+.popper-band,
+.popper-tip {
+  position: absolute;
+  left: 0;
+}
+
+.popper-shell {
+  bottom: 0;
+  width: 100%;
+  height: 100%;
+  background: linear-gradient(135deg, #f87171 0%, #dc2626 100%);
+  clip-path: polygon(0 15%, 100% 0, 88% 100%, 0% 100%);
+  border-radius: 26px;
+  box-shadow: inset 0 0 0 2px rgba(255, 255, 255, 0.18);
+}
+
+.popper-band {
+  bottom: 10px;
+  left: 10px;
+  width: 72px;
+  height: 20px;
+  background: linear-gradient(90deg, #fbbf24 0%, #fb7185 100%);
+  border-radius: 999px;
+}
+
+.popper-tip {
+  bottom: -16px;
+  left: 14px;
+  width: 18px;
+  height: 18px;
+  background: #fbbf24;
+  clip-path: polygon(50% 0%, 0% 100%, 100% 100%);
+}
+
+.ribbon {
+  position: absolute;
+  bottom: 42px;
+  width: 8px;
+  height: 180px;
+  border-radius: 999px;
+  transform-origin: bottom center;
+  opacity: 0.95;
+  animation: ribbon-swish 3.6s ease-in-out infinite;
+}
+
+.ribbon::before {
+  content: "";
+  position: absolute;
+  left: -12px;
+  top: 30px;
+  width: 100%;
+  height: 100%;
+  background: inherit;
+  border-radius: inherit;
+  opacity: 0.64;
+  transform: rotate(18deg);
+}
+
+.ribbon--one {
+  left: 28%;
+  background: linear-gradient(180deg, #fbbf24 0%, #fb7185 100%);
+  animation-delay: 0.1s;
+}
+
+.ribbon--two {
+  left: 40%;
+  background: linear-gradient(180deg, #38bdf8 0%, #0ea5e9 100%);
+  animation-delay: 0.35s;
+}
+
+.ribbon--three {
+  left: 52%;
+  background: linear-gradient(180deg, #a855f7 0%, #f472b6 100%);
+  animation-delay: 0.65s;
+}
+
+.ribbon--four {
+  left: 64%;
+  background: linear-gradient(180deg, #22c55e 0%, #16a34a 100%);
+  animation-delay: 0.85s;
+}
+
+.ribbon--five {
+  left: 76%;
+  background: linear-gradient(180deg, #fb7185 0%, #ef4444 100%);
+  animation-delay: 0.5s;
+}
+
+.ribbon--six {
+  left: 88%;
+  background: linear-gradient(180deg, #f97316 0%, #f59e0b 100%);
+  animation-delay: 0.2s;
+}
+
+.burst-piece {
+  position: absolute;
+  width: 12px;
+  height: 12px;
+  border-radius: 4px;
+  opacity: 0;
+  animation: burst-pop 3.2s ease-out infinite;
+}
+
+.burst--one {
+  left: 48%;
+  bottom: 90px;
+  background: #fed7aa;
+  animation-delay: 0.1s;
+}
+
+.burst--two {
+  left: 52%;
+  bottom: 90px;
+  background: #a5f3fc;
+  animation-delay: 0.25s;
+}
+
+.burst--three {
+  left: 58%;
+  bottom: 86px;
+  background: #fda4af;
+  animation-delay: 0.4s;
+}
+
+.burst--four {
+  left: 34%;
+  bottom: 84px;
+  background: #4ade80;
+  animation-delay: 0.2s;
+}
+
+.burst--five {
+  left: 68%;
+  bottom: 84px;
+  background: #60a5fa;
+  animation-delay: 0.35s;
+}
+
+.burst--six {
+  left: 24%;
+  bottom: 76px;
+  width: 14px;
+  height: 14px;
+  background: #fbbf24;
+  animation-delay: 0.15s;
+}
+
+.burst--seven {
+  left: 78%;
+  bottom: 74px;
+  width: 8px;
+  height: 8px;
+  background: #c084fc;
+  animation-delay: 0.55s;
+}
+
+.burst--eight {
+  left: 12%;
+  bottom: 72px;
+  width: 10px;
+  height: 10px;
+  background: #fb7185;
+  animation-delay: 0.3s;
+}
+
+.burst--nine {
+  left: 92%;
+  bottom: 80px;
+  width: 10px;
+  height: 10px;
+  background: #34d399;
+  animation-delay: 0.45s;
+}
+
+.burst--ten {
+  left: 82%;
+  bottom: 70px;
+  width: 14px;
+  height: 14px;
+  background: #f97316;
+  animation-delay: 0.6s;
+}
+
+@keyframes ribbon-swish {
+  0%,
+  100% {
+    transform: translateY(0) rotate(-8deg);
+  }
+  25% {
+    transform: translateY(-36px) rotate(8deg);
+  }
+  50% {
+    transform: translateY(10px) rotate(-8deg);
+  }
+  75% {
+    transform: translateY(-24px) rotate(6deg);
+  }
+}
+
+@keyframes burst-pop {
+  0% {
+    opacity: 0;
+    transform: translateY(0) scale(0.8);
+  }
+  15% {
+    opacity: 1;
+  }
+  45% {
+    transform: translate(-12px, -70px) scale(1);
+  }
+  100% {
+    opacity: 0;
+    transform: translate(12px, -160px) rotate(240deg) scale(0.8);
+  }
+}
+
+@keyframes confetti-pop {
+  0%,
+  100% {
+    transform: scale(0.8) translateY(0) translateX(0) rotate(0deg);
+    opacity: 0;
+  }
+  20% {
+    opacity: 1;
+  }
+  50% {
+    transform: scale(1) translateY(-62px) translateX(12px) rotate(180deg);
+    opacity: 1;
+  }
+  100% {
+    transform: scale(0.8) translateY(-120px) translateX(20px) rotate(360deg);
+    opacity: 0;
+  }
+}
+
+.popper-container,
+.birthday-card,
+.slider-container {
+  position: relative;
+  z-index: 1;
+}
+
+.popper-container {
+  width: min(1080px, 100%);
+  margin: 0 auto 24px;
+  display: flex;
+  justify-content: center;
+  gap: 48px;
+  align-items: flex-end;
+  position: relative;
+  z-index: 1;
+}
+
+.popper {
+  position: relative;
+  width: 88px;
+  height: 130px;
+  display: flex;
+  align-items: flex-end;
+  justify-content: center;
+  animation: popper-swing 2.2s ease-in-out infinite;
+}
+
+.popper--right {
+  animation-delay: 0.5s;
+}
+
+.popper--center {
+  animation-delay: 0.25s;
+}
+
+.popper--cone-style {
+  align-items: center;
+}
+
+.popper-cone {
+  position: absolute;
+  bottom: 0;
+  width: 70px;
+  height: 90px;
+  background: #ea580c;
+  clip-path: polygon(0 0, 100% 0, 70% 100%, 30% 100%);
+  overflow: hidden;
+  border-radius: 4px;
+}
+
+.popper-cone .stripe {
+  position: absolute;
+  width: 150%;
+  height: 14px;
+  background: #fde047;
+  transform: rotate(-25deg);
+  left: -20%;
+}
+
+.popper-cone .stripe:nth-child(1) { top: 15px; }
+.popper-cone .stripe:nth-child(2) { top: 40px; }
+.popper-cone .stripe:nth-child(3) { top: 65px; }
+
+.cone-confetti--1 { background: #f43f5e; top: 10px; left: 15px; animation-delay: 0.1s; border-radius: 2px; }
+.cone-confetti--2 { background: #3b82f6; top: 20px; right: 15px; animation-delay: 0.3s; border-radius: 2px; width: 12px; height: 8px; }
+.cone-confetti--3 { background: #a855f7; top: -5px; left: 25px; animation-delay: 0.5s; border-radius: 2px; }
+.cone-confetti--4 { background: #10b981; top: 5px; right: 25px; animation-delay: 0.2s; border-radius: 2px; width: 8px; height: 12px; }
+.cone-confetti--5 { background: #fbbf24; top: 15px; left: 40px; animation-delay: 0.4s; border-radius: 2px; }
+.cone-confetti--6 { background: #f97316; top: -10px; right: 40px; animation-delay: 0.6s; border-radius: 2px; }
+
+.ribbon-curl {
+  position: absolute;
+  width: 16px;
+  height: 36px;
+  border: 3px solid transparent;
+  border-radius: 50%;
+  opacity: 0;
+  animation: confetti-pop 2.2s ease-out infinite;
+}
+
+.ribbon-curl--1 {
+  border-top-color: #3b82f6;
+  border-right-color: #3b82f6;
+  top: 15px;
+  left: 10px;
+  animation-delay: 0.2s;
+}
+
+.ribbon-curl--2 {
+  border-top-color: #f43f5e;
+  border-left-color: #f43f5e;
+  top: 0px;
+  left: 40px;
+  width: 20px;
+  height: 44px;
+  animation-delay: 0.45s;
+}
+
+.ribbon-curl--3 {
+  border-bottom-color: #10b981;
+  border-right-color: #10b981;
+  top: 25px;
+  left: 30px;
+  animation-delay: 0.7s;
+}
+
+.popper-head {
+  position: absolute;
+  bottom: 26px;
+  width: 48px;
+  height: 64px;
+  background: radial-gradient(
+    circle at 30% 20%,
+    #fb7185 0%,
+    #f43f5e 55%,
+    #c026d3 100%
+  );
+  border-radius: 22px 22px 10px 10px;
+  box-shadow: inset -6px -8px 0 rgba(255, 255, 255, 0.28);
+}
+
+.popper-head::before {
+  content: "";
+  position: absolute;
+  left: 50%;
+  bottom: -12px;
+  transform: translateX(-50%);
+  width: 18px;
+  height: 20px;
+  background: #f97316;
+  clip-path: polygon(50% 0%, 0% 100%, 100% 100%);
+}
+
+.popper-stick {
+  position: absolute;
+  bottom: 0;
+  width: 10px;
+  height: 60px;
+  background: linear-gradient(180deg, #fde68a 0%, #f59e0b 100%);
+  border-radius: 6px;
+  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.12);
+}
+
+.confetti {
+  position: absolute;
+  width: 10px;
+  height: 10px;
+  border-radius: 50%;
+  opacity: 0;
+  animation: confetti-pop 2s ease-out infinite;
+}
+
+.confetti--one {
+  background: #f59e0b;
+  top: 24px;
+  left: 6px;
+  animation-delay: 0.1s;
+}
+.confetti--two {
+  background: #22c55e;
+  top: 16px;
+  right: 6px;
+  animation-delay: 0.2s;
+}
+.confetti--three {
+  background: #38bdf8;
+  top: 8px;
+  left: 28px;
+  animation-delay: 0.3s;
+}
+.confetti--four {
+  background: #a855f7;
+  top: 18px;
+  right: 28px;
+  animation-delay: 0.4s;
+}
+.confetti--five {
+  background: #f43f5e;
+  top: 10px;
+  right: 0px;
+  animation-delay: 0.5s;
+}
+.confetti--six {
+  background: #fbbf24;
+  top: 22px;
+  left: 10px;
+  animation-delay: 0.25s;
+}
+.confetti--seven {
+  background: #0ea5e9;
+  top: 18px;
+  right: 12px;
+  animation-delay: 0.35s;
+}
+.confetti--eight {
+  background: #22c55e;
+  top: 12px;
+  left: 34px;
+  animation-delay: 0.45s;
+}
+.confetti--nine {
+  background: #8b5cf6;
+  top: 6px;
+  right: 34px;
+  animation-delay: 0.55s;
+}
+.confetti--ten {
+  background: #ec4899;
+  top: 10px;
+  left: 0px;
+  animation-delay: 0.65s;
+}
+/* Container to center the header */
+.header-container {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 50px;
+}
+
+.wavy-text {
+  position: relative;
+  font-family: 'Arial Rounded MT Bold', sans-serif;
+  font-size: 2rem;
+  color: #ff4757;
+  display: flex;
+  font-weight: 900;
+}
+
+.wavy-text span {
+  position: relative;
+  display: inline-block;
+  /* This is the magic: the animation delay is based on the index */
+  animation: wave 1.5s ease-in-out infinite;
+  animation-delay: calc(0.1s * var(--i));
+}
+
+/* Ensure spaces between words don't collapse */
+.wavy-text span.space {
+  width: 20px;
+}
+
+/* The Wave Animation */
+@keyframes wave {
+  0%, 100% {
+    transform: translateY(0);
+    text-shadow: 0 5px 10px rgba(0,0,0,0.1);
+  }
+  50% {
+    transform: translateY(-20px);
+    text-shadow: 0 20px 20px rgba(0,0,0,0.2);
+    color: #ffa502; /* Color shifts slightly at the peak */
+  }
+}
+
+@keyframes popper-swing {
+  0%,
+  100% {
+    transform: translateY(0) rotate(-4deg);
+  }
+  50% {
+    transform: translateY(-6px) rotate(4deg);
+  }
+}
+
+@keyframes confetti-pop {
+  0% {
+    transform: scale(0.8) translateY(0) translateX(0) rotate(0deg);
+    opacity: 0;
+  }
+  20% {
+    opacity: 1;
+  }
+  50% {
+    transform: scale(1) translateY(-62px) translateX(12px) rotate(180deg);
+    opacity: 1;
+  }
+  100% {
+    transform: scale(0.8) translateY(-120px) translateX(20px) rotate(360deg);
+    opacity: 0;
+  }
+}
