@@ -499,18 +499,19 @@
   left: 34px;
   animation-delay: 0.45s;
 }
-.confetti--nine {
-  background: #8b5cf6;
-  top: 6px;
-  right: 34px;
-  animation-delay: 0.55s;
-}
 .confetti--ten {
   background: #ec4899;
   top: 10px;
   left: 0px;
   animation-delay: 0.65s;
 }
+.confetti--nine {
+  background: #8b5cf6;
+  top: 6px;
+  right: 34px;
+  animation-delay: 0.55s;
+}
+
 /* Container to center the header */
 .header-container {
   display: flex;
