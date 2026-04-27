@@ -18,13 +18,13 @@ function Notes() {
             <span className="descrption">Bhaiii reee🎉🥳</span>
             <span className="descrption">
               Aajker din ta completely tor jonno...enjoy it to the fullest.
-              Seriously bolchi, tui na thakle amr college life ekdom pocha hoto. Thank you for always being there,jotoi choto choto
-              bepar hok. college jawa,college thekhe asha, adda dewa, random,antabri, odhbut topics nea gossips, sob ki6u moja lage tor sathe.
+              Seriously bolchi, tui na thakle amr college life ekdom pocha hoto. Thank you for always being there, jotoi choto choto
+              bepar hok. college jawa,college thekhe asha, adda dewa, random,antabri, odhbut topics nea gossips, sob ki6u moja lage korte.
             </span>
 
             <span className="descrption">
-              thank you for being so kind and helpful...Sobai emon hoy na,
-              ar eta tor biggest strength. Jokhon dorkar hoy tui thakis.
+              Thank you for being so kind and helpful...Sobai emon hoy na,
+              ar eta tor biggest strength. Jokhon amr ki6u...dorkar hoy tui thakis.
             </span>
 
             <span className="descrption">
