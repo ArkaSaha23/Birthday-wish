@@ -24,6 +24,16 @@
   font-weight: 500;
 }
 
+.buttom-wish{
+   display: block;
+  text-align: center;
+  font-size: 1.1rem;
+  line-height: 1.7;
+  color: #334155;
+  margin-bottom: 16px;
+  font-weight: 500;
+}
+
 .birthday-card__detail .descrption:last-child {
   margin-bottom: 0;
 }
