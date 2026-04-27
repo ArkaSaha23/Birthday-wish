@@ -8,6 +8,7 @@ function App() {
   return (
     <div className="birthday-page">
       <Hero srtvalue="0" endvalue="-1350">
+        
         <div className="party-overlay" aria-hidden="true">
           <span className="burst-piece burst--one"></span>
           <span className="burst-piece burst--two"></span>
