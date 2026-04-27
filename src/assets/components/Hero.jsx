@@ -3,6 +3,7 @@ import { motion } from "framer-motion";
 import "./Hero.css";
 
 const Hero = ({ srtvalue, endvalue, children }) => {
+  //this will contain images
   const items = [
     { id: 1, img: "https://picsum.photos/id/1015/300/220" },
     { id: 2, img: "https://picsum.photos/id/1025/300/220" },
