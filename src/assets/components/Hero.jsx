@@ -1,47 +1,50 @@
 import React from "react";
 import { motion } from "framer-motion";
 import "./Hero.css";
+import img1 from "../../asset/img1.jpeg";
+import img2 from "../../asset/img2.jpeg";
+import img3 from "../../asset/img3.jpeg";
+import img4 from "../../asset/img4.jpeg";
+import img5 from "../../asset/img5.jpeg";
+import img6 from "../../asset/img6.jpeg";
+import img7 from "../../asset/img7.jpeg";
 
-const Hero = ({ srtvalue, endvalue, children }) => {
-  //this will contain images
+const Hero = ({ children }) => {
   const items = [
-    { id: 1, img: "https://picsum.photos/id/1015/300/220" },
-    { id: 2, img: "https://picsum.photos/id/1025/300/220" },
-    { id: 3, img: "https://picsum.photos/id/1035/300/220" },
-    { id: 4, img: "https://picsum.photos/id/1045/300/220" },
-    { id: 5, img: "https://picsum.photos/id/1055/300/220" },
-    { id: 6, img: "https://picsum.photos/id/1065/300/220" },
+    { id: 1, img: img1 },
+    { id: 2, img: img2 },
+    { id: 3, img: img3 },
+    { id: 4, img: img4 },
+    { id: 5, img: img5 },
+    { id: 6, img: img6 },
+    { id: 7, img: img7 },
   ];
-  // Doubling the items is enough for the seamless loop logic
+
+  // Duplicate for seamless infinite loop
   const duplicatedItems = [...items, ...items];
 
   return (
-    
     <div className="slider-container">
-      {children ? (
+      {children && (
         <motion.div
           className="slider-floating-layer"
-          animate={{
-            x: [Number(srtvalue), Number(endvalue)],
-          }}
+          animate={{ x: ["0%", "-50%"] }}
           transition={{
             ease: "linear",
-            duration: 18,
+            duration: 40, // 40 seconds = smooth + slow
             repeat: Infinity,
           }}
         >
           {children}
         </motion.div>
-      ) : null}
+      )}
 
       <motion.div
         className="slider-track"
-        animate={{
-          x: [Number(srtvalue), Number(endvalue)],
-        }}
+        animate={{ x: ["0%", "-50%"] }}
         transition={{
           ease: "linear",
-          duration: 18,
+          duration: 40, // 40 seconds for full loop
           repeat: Infinity,
         }}
       >
